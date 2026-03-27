@@ -22,7 +22,7 @@ return redirect(url_for('index'))
 
 @app.route('/delete/int:id') def delete(id): conn = sqlite3.connect(DB) c = conn.cursor() c.execute('DELETE FROM tarefas WHERE id=?', (id,)) conn.commit() conn.close() return redirect(url_for('index'))
 
-if name == 'main': init_db() app.run(host='0.0.0.0', port=5000)
+if name == 'main': init_db() app.run()
 
 templates/index.html
 
